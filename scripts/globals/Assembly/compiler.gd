@@ -13,7 +13,7 @@ func _coerce(token: String):
 		return int(token)
 	return token
 
-func jit(source: String) -> Program:
+func compile(source: String) -> Program:
 	var raw_lines: Array = source.replace("\r\n", "\n").replace("\r", "\n").split("\n")
 	var cleaned_lines: Array[String] = []
 
