@@ -18,7 +18,6 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 ASMInstructions="*uid://cl02267qd7xp0"
-ASMInterpreter="*uid://cknaglbm5msr8"
 ASMCompiler="*uid://dd8dygh55v8o5"
 
 [display]
