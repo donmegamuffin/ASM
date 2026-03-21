@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c5mrhvtw3yftx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3mvui"]
+sky_top_color = Color(0.269568, 0.3267538, 0.40295336, 1)
+sky_horizon_color = Color(0.5282585, 0.53480494, 0.5448549, 1)
+ground_horizon_color = Color(0.5282585, 0.53480494, 0.5448549, 1)
+
+[sub_resource type="Sky" id="Sky_iqhr0"]
+sky_material = SubResource("ProceduralSkyMaterial_3mvui")
+
+[sub_resource type="Environment" id="Environment_py2vk"]
+background_mode = 2
+sky = SubResource("Sky_iqhr0")
+ssao_enabled = true
+sdfgi_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0085
+volumetric_fog_albedo = Color(0.76113594, 0.14159077, 0.3401265, 1)
+volumetric_fog_anisotropy = -0.6
+
+[node name="Node3D" type="Node3D" unique_id=745303866]
+
+[node name="Geometry" type="Node3D" parent="." unique_id=516635615]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry" unique_id=1375181241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+size = Vector3(16, 0.5, 16)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry" unique_id=1716555039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -9.536743e-07, 0.9500001, 7.75)
+size = Vector3(15, 2, 0.5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry" unique_id=1286819849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95000005, -7.75)
+size = Vector3(15, 2, 0.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry" unique_id=1708481894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.75, 0.95, 0)
+size = Vector3(0.5, 2, 16)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry" unique_id=379006480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75, 0.95, 0)
+size = Vector3(0.5, 2, 16)
+
+[node name="Lighting" type="Node3D" parent="." unique_id=1314031237]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting" unique_id=733512359]
+environment = SubResource("Environment_py2vk")

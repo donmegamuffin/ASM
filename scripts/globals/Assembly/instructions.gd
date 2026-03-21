@@ -50,22 +50,29 @@ enum EInstruction{
 	LBL,
 	NOP,}
 
+enum EOperandType{
+	INSTRUCTION,
+	REGISTER,
+	IMMEDIATE,
+	LABEL,
+	COMMENT,
+	UNKNOWN,}
+
 enum ERegister{
-	r00,
-	r01,
-	r02,
-	r03,
-	r04,
-	r05,
-	r08,
-	r09,
-	r0A,
-	r0B,
-	r0C,
-	r0D,
-	r0E,
-	r0F,
-	r10,}
+	r0,
+	r1,
+	r2,
+	r3,
+	r4,
+	r5,
+	r8,
+	r9,
+	rA,
+	rB,
+	rC,
+	rD,
+	rE,
+	rF,}
 
 var instruction_map: Dictionary = {
 	"ADD"	: self.EInstruction.ADD,
@@ -118,18 +125,17 @@ var instruction_map: Dictionary = {
 	"NOP"	: self.EInstruction.NOP,}
 
 var register_map: Dictionary = {
-	"r00":self.ERegister.r00,
-	"r01":self.ERegister.r01,
-	"r02":self.ERegister.r02,
-	"r03":self.ERegister.r03,
-	"r04":self.ERegister.r04,
-	"r05":self.ERegister.r05,
-	"r08":self.ERegister.r08,
-	"r09":self.ERegister.r09,
-	"r0A":self.ERegister.r0A,
-	"r0B":self.ERegister.r0B,
-	"r0C":self.ERegister.r0C,
-	"r0D":self.ERegister.r0D,
-	"r0E":self.ERegister.r0E,
-	"r0F":self.ERegister.r0F,
-	"r10":self.ERegister.r10,}
+	"r0":self.ERegister.r0,
+	"r1":self.ERegister.r1,
+	"r2":self.ERegister.r2,
+	"r3":self.ERegister.r3,
+	"r4":self.ERegister.r4,
+	"r5":self.ERegister.r5,
+	"r8":self.ERegister.r8,
+	"r9":self.ERegister.r9,
+	"rA":self.ERegister.rA,
+	"rB":self.ERegister.rB,
+	"rC":self.ERegister.rC,
+	"rD":self.ERegister.rD,
+	"rE":self.ERegister.rE,
+	"rF":self.ERegister.rF,}

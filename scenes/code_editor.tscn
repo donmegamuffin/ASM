@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://be7uqiweqr7mw"]
 
-[ext_resource type="Script" uid="uid://dn0186qo0a6js" path="res://scripts/code_editor.gd" id="1_q0psu"]
-[ext_resource type="Script" uid="uid://ckasmbru56no2" path="res://scripts/syntax_highlighter.gd" id="2_i4sis"]
+[ext_resource type="Script" uid="uid://dn0186qo0a6js" path="res://scripts/code_editor/main_panel.gd" id="1_q0psu"]
+[ext_resource type="Script" uid="uid://ckasmbru56no2" path="res://scripts/code_editor/syntax_highlighter.gd" id="2_i4sis"]
+[ext_resource type="FontFile" uid="uid://b3o5431r5xjjs" path="res://assets/fonts/JetBrainsMono-Regular.ttf" id="2_xqpb2"]
+[ext_resource type="Script" uid="uid://2scbcltm7a5f" path="res://scripts/code_editor/code_edit.gd" id="4_cctyv"]
 
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_xqpb2"]
 script = ExtResource("2_i4sis")
@@ -32,7 +34,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_xqpb2")
 theme_override_font_sizes/font_size = 48
+text = "Label:
+	ADD r4 r3 r2
+	SUB r9 r1 42
+	MUL r1 42 r2
+	DIV r2 r3 r9 # Comment
+	JMP Label"
 scroll_smooth = true
 minimap_draw = true
 minimap_width = 160
@@ -54,3 +64,7 @@ code_completion_enabled = true
 indent_automatic = true
 auto_brace_completion_enabled = true
 auto_brace_completion_highlight_matching = true
+script = ExtResource("4_cctyv")
+
+[connection signal="breakpoint_toggled" from="Panel/CodeEdit" to="." method="_on_code_edit_breakpoint_toggled"]
+[connection signal="text_changed" from="Panel/CodeEdit" to="Panel/CodeEdit" method="_on_text_changed"]
