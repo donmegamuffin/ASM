@@ -56,4 +56,4 @@ environment = SubResource("Environment_py2vk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570817, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1299743347]
-transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 3.4, 2.9, 0)
+transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 6.5, 2.9, 0.1)

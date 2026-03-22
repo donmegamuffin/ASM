@@ -186,22 +186,22 @@ func _op_JMP(inst):
 	ip = inst[1]
 	
 func _op_JGT(inst):
-	ip = inst[3] if inst[1] > inst[2] else ip
+	ip = inst[3] if registers[inst[1]] > registers[inst[2]] else ip
 	
 func _op_JLT(inst):
-	ip = inst[3] if inst[1] < inst[2] else ip
+	ip = inst[3] if registers[inst[1]] < registers[inst[2]] else ip
 	
 func _op_JEQ(inst):
-	ip = inst[3] if inst[1] == inst[2] else ip
+	ip = inst[3] if registers[inst[1]] == registers[inst[2]] else ip
 	
 func _op_JNE(inst):
-	ip = inst[3] if inst[1] != inst[2] else ip
+	ip = inst[3] if registers[inst[1]] != registers[inst[2]] else ip
 	
 func _op_JGE(inst):
-	ip = inst[3] if inst[1] >= inst[2] else ip
+	ip = inst[3] if registers[inst[1]] >= registers[inst[2]] else ip
 	
 func _op_JLE(inst):
-	ip = inst[3] if inst[1] <= inst[2] else ip
+	ip = inst[3] if registers[inst[1]] <= registers[inst[2]] else ip
 	
 func _op_JAL(_inst):
 	push_error("_op_JAL Not implemented")
