@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://cknaglbm5msr8" path="res://scripts/Assembly/cpu_component.gd" id="1_nxyl4"]
 
-[node name="cpu_node" type="Node" unique_id=130683289]
+[node name="CpuComponent" type="Node" unique_id=130683289]
 script = ExtResource("1_nxyl4")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d2t1mryugopf6"]
+
+[ext_resource type="Script" uid="uid://hqf6xy5rrhdk" path="res://scripts/Assembly/memory_node.gd" id="1_ef3vg"]
+
+[node name="MemoryComponent" type="Node" unique_id=1715041078]
+script = ExtResource("1_ef3vg")

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c5mrhvtw3yftx"]
 
+[ext_resource type="PackedScene" uid="uid://bxe7x6cybl6mm" path="res://scenes/entities/test_physics_object.tscn" id="1_iqhr0"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3mvui"]
 sky_top_color = Color(0.269568, 0.3267538, 0.40295336, 1)
 sky_horizon_color = Color(0.5282585, 0.53480494, 0.5448549, 1)
@@ -24,6 +26,7 @@ volumetric_fog_anisotropy = -0.6
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Geometry" unique_id=1375181241]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+use_collision = true
 size = Vector3(16, 0.5, 16)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Geometry" unique_id=1716555039]
@@ -46,3 +49,11 @@ size = Vector3(0.5, 2, 16)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting" unique_id=733512359]
 environment = SubResource("Environment_py2vk")
+
+[node name="Entities" type="Node3D" parent="." unique_id=1797762197]
+
+[node name="TestPhysicsObject" parent="Entities" unique_id=200861859 instance=ExtResource("1_iqhr0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570817, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1299743347]
+transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 3.4, 2.9, 0)

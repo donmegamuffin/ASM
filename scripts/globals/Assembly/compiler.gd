@@ -44,6 +44,11 @@ func _compile_instruction_line(line: Array[String], label_table: Dictionary)->Ar
 			optypes.append(ASMInstructions.EOperandType.LABEL)
 		else: 
 			optypes.append(ASMInstructions.EOperandType.UNKNOWN)
+			print(String(operand))
+			print(label_table.keys()[0])
+			print(operand in label_table.keys())
+			print(type_string(typeof(operand)))
+			print(type_string(typeof(label_table.keys()[0])))
 			bHasParsingError = true
 		i+=1
 	
@@ -112,6 +117,9 @@ func compile(source: String) -> Program:
 		instruction_idx += 1
 #
 	for line in cleaned_lines:
+		# One last stripe
+		line = line.lstrip("\n\t ").rstrip("\n\t ")
+		
 		# Skip if line is empty or a label
 		if line[-1] == ":" or len(line)==0:
 			continue

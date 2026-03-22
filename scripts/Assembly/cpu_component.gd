@@ -1,19 +1,20 @@
-extends Node
+class_name CPUComponent extends Node
 
 var program: ASMCompiler.Program = null
 var ip: int = 0 # Instruction pointer
-var memory: Array = []
+var memory: MemoryComponent = null
 var registers: Array = []
 var running: bool = false
 
-func _init(memory_size:int=128, n_registers:int=16) -> void:
-	memory.resize(memory_size)
+func _init(n_registers:int=16) -> void:
 	registers.resize(n_registers)
 	reset_state()
 	
+func bind_to_memory(memory_comp: MemoryComponent):
+	memory = memory_comp
+	
 func reset_state():
 	ip = 0
-	memory.fill(0.)
 	registers.fill(0.)
 	
 func load_program(tprogram: ASMCompiler.Program):
@@ -206,10 +207,10 @@ func _op_JAL(_inst):
 	push_error("_op_JAL Not implemented")
 	
 func _op_STR(inst):
-	memory[inst[2]] = registers[inst[1]]
+	memory.set_at_address(registers[inst[2]],registers[inst[1]])
 	
 func _op_LDR(inst):
-	registers[inst[1]] = memory[inst[2]]
+	registers[inst[1]] = memory.get_at_address(registers[inst[2]])
 	
 func _op_MOV(inst):
 	# MOV rd rs

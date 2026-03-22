@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bxe7x6cybl6mm"]
+
+[ext_resource type="PackedScene" uid="uid://d12jhn3jw6kdv" path="res://scenes/components/cpu_component.tscn" id="1_fsj4o"]
+[ext_resource type="Script" uid="uid://bskndoe70f6wr" path="res://scripts/entities/test_physics_object.gd" id="1_r11t0"]
+[ext_resource type="PackedScene" uid="uid://d2t1mryugopf6" path="res://scenes/components/memory_component.tscn" id="2_r11t0"]
+[ext_resource type="PackedScene" uid="uid://h2vi8ec4j1ko" path="res://scenes/components/mem_mapped_components/simple_movement.tscn" id="3_bx3dp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11ei7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_axl5e"]
+
+[node name="TestPhysicsObject" type="RigidBody3D" unique_id=200861859]
+script = ExtResource("1_r11t0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1749058383]
+shape = SubResource("BoxShape3D_11ei7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=913100022]
+mesh = SubResource("BoxMesh_axl5e")
+
+[node name="CpuComponent" parent="." unique_id=130683289 instance=ExtResource("1_fsj4o")]
+unique_name_in_owner = true
+
+[node name="MemoryComponent" parent="." unique_id=1715041078 instance=ExtResource("2_r11t0")]
+unique_name_in_owner = true
+
+[node name="SimpleMovementComponent" parent="." unique_id=572949611 instance=ExtResource("3_bx3dp")]
+unique_name_in_owner = true

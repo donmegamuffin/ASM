@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://h2vi8ec4j1ko"]
+
+[ext_resource type="Script" uid="uid://de1vbk3163s2v" path="res://scripts/Assembly/mem_mapped_components/simple_movement.gd" id="1_6mls4"]
+
+[node name="SimpleMovementComponent" type="Node" unique_id=572949611]
+script = ExtResource("1_6mls4")
