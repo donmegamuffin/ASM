@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ckasmbru56no2" path="res://scripts/code_editor/syntax_highlighter.gd" id="2_i4sis"]
 [ext_resource type="FontFile" uid="uid://b3o5431r5xjjs" path="res://assets/fonts/JetBrainsMono-Regular.ttf" id="2_xqpb2"]
 [ext_resource type="Script" uid="uid://2scbcltm7a5f" path="res://scripts/code_editor/code_edit.gd" id="4_cctyv"]
+[ext_resource type="PackedScene" uid="uid://d12jhn3jw6kdv" path="res://scenes/components/cpu_node.tscn" id="5_ys1v0"]
 
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_cctyv"]
 script = ExtResource("2_i4sis")
@@ -38,10 +39,10 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("2_xqpb2")
 theme_override_font_sizes/font_size = 48
 text = "Label:
-	ADD r4 r3 r2
+	ADD r4 r3 69
 	SUB r9 r1 42
 	MUL r1 42 r2
-	DIV r2 r3 r9 # Comment
+	DIV r2 r9 2 # Comment
 	JMP Label"
 scroll_smooth = true
 minimap_draw = true
@@ -66,4 +67,8 @@ auto_brace_completion_enabled = true
 auto_brace_completion_highlight_matching = true
 script = ExtResource("4_cctyv")
 
+[node name="cpu_node" parent="." unique_id=130683289 instance=ExtResource("5_ys1v0")]
+unique_name_in_owner = true
+
+[connection signal="breakpoint_toggled" from="CodeEdit" to="." method="_on_code_edit_breakpoint_toggled"]
 [connection signal="text_changed" from="CodeEdit" to="CodeEdit" method="_on_text_changed"]

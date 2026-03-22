@@ -68,7 +68,7 @@ func _compile_instruction_line(line: Array[String], label_table: Dictionary)->Ar
 	# integers in the final instruction like [5, 2, 3, 7] which under the hood
 	# will get converted to ["SUBri", "r2", "r3", 7] for processing because
 	# types are inferred from the instruction.
-	var compiled_instruction_line = []
+	var compiled_instruction_line: Array[int] = []
 	for idx in range(len(line)):
 		match optypes[idx]:
 			ASMInstructions.EOperandType.INSTRUCTION:

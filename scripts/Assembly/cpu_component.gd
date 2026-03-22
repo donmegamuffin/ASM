@@ -1,7 +1,7 @@
 extends Node
 
 var program: ASMCompiler.Program = null
-var ip: int = 0			# Instruction pointer
+var ip: int = 0 # Instruction pointer
 var memory: Array = []
 var registers: Array = []
 var running: bool = false
@@ -9,10 +9,16 @@ var running: bool = false
 func _init(memory_size:int=128, n_registers:int=16) -> void:
 	memory.resize(memory_size)
 	registers.resize(n_registers)
-	return
+	reset_state()
+	
+func reset_state():
+	ip = 0
+	memory.fill(0.)
+	registers.fill(0.)
 	
 func load_program(tprogram: ASMCompiler.Program):
 	program = tprogram
+	running = true
 
 func tick():
 	if not running or ip >= len(program.instructions):
