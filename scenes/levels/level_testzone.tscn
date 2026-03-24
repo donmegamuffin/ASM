@@ -51,13 +51,17 @@ size = Vector3(0.5, 2, 16)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting" unique_id=733512359]
 environment = SubResource("Environment_py2vk")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting" unique_id=755368832]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
 [node name="Entities" type="Node3D" parent="." unique_id=1797762197]
 
 [node name="TestPhysicsObject" parent="Entities" unique_id=200861859 instance=ExtResource("1_iqhr0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570817, 0)
 
 [node name="TestCharacterEntity" parent="Entities" unique_id=1808165531 instance=ExtResource("2_py2vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0.7, 4.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 0.79999995, 4.7000017)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1299743347]
 transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 6.5, 2.9, 0.1)

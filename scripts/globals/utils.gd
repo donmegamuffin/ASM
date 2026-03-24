@@ -9,4 +9,4 @@ static func _cmp_ind(acc, cur) -> Array:
 		return acc
 
 static func argmin(array: Array) -> int:
-	return array.reduce(_cmp_ind, [])[0]
+	return array.reduce(_cmp_ind, [])[1]
