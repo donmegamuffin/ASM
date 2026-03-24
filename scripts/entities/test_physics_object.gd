@@ -3,33 +3,27 @@ extends RigidBody3D
 @onready var cpu_component: CPUComponent = %CpuComponent
 @onready var memory_component: MemoryComponent = %MemoryComponent
 @onready var simple_movement_component: MMSimpleMovementComponent = %SimpleMovementComponent
+@onready var simple_detector_component: MMSimplePlayerDetectorComponent = %SimplePlayerDetectorComponent
 
-var asm_script: String = "
-# Set memory location address
-ADD r2 r0 34		# r2 holds z-axis address
-ADD r3 r0 15		# r3 holds max speed
-NEG r4 r3		# r4 holds min speed
-INCREASE:
-	ADD r1 r1 1
-	STR r1 r2
-	JLE r1 r3 INCREASE	
-DECREASE:
-	SUB r1 r1 1
-	STR r1 r2
-	JGE r1 r4 DECREASE
-	JMP INCREASE"
-
+var asm_script_path: String = "res://scripts/ASM/simple_oscillator.asm"
+var asm_script: String = ""
 
 func _ready() -> void:
+	load_asm_script_from_file(asm_script_path)
 	memory_component.resize(128)
+	# Bind components
 	cpu_component.bind_to_memory(memory_component)
 	simple_movement_component.bind_to_memory(memory_component,32)
 	simple_movement_component.bind_to_parent(self)
-	print(asm_script)
+	simple_detector_component.bind_to_memory(memory_component,64)
+	simple_detector_component.bind_to_parent(self)
+	# Compile and load script
 	var code = ASMCompiler.compile(asm_script)
 	cpu_component.load_program(code)
 	print(code.instructions)
 
 func _process(_delta: float) -> void:
 	cpu_component.tick()
-	print(cpu_component.registers[1])
+
+func load_asm_script_from_file(fpath: String):
+	asm_script = FileAccess.open(asm_script_path,FileAccess.READ).get_as_text()

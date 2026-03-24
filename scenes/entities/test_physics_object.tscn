@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bskndoe70f6wr" path="res://scripts/entities/test_physics_object.gd" id="1_r11t0"]
 [ext_resource type="PackedScene" uid="uid://d2t1mryugopf6" path="res://scenes/components/memory_component.tscn" id="2_r11t0"]
 [ext_resource type="PackedScene" uid="uid://h2vi8ec4j1ko" path="res://scenes/components/mem_mapped_components/simple_movement.tscn" id="3_bx3dp"]
+[ext_resource type="PackedScene" uid="uid://c26mw1vuuhat2" path="res://scenes/components/mem_mapped_components/simple_player_detector.tscn" id="5_bx3dp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_11ei7"]
 
@@ -25,4 +26,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="SimpleMovementComponent" parent="." unique_id=572949611 instance=ExtResource("3_bx3dp")]
+unique_name_in_owner = true
+
+[node name="SimplePlayerDetectorComponent" parent="." unique_id=615553440 instance=ExtResource("5_bx3dp")]
 unique_name_in_owner = true

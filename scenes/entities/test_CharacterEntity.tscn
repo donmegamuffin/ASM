@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ude7qhddu3wy"]
+
+[ext_resource type="Script" uid="uid://bkj4ryvjxn0ri" path="res://scripts/entities/character_entity_base.gd" id="1_4q72m"]
+[ext_resource type="Texture2D" uid="uid://dw3o8os833g48" path="res://assets/icon.svg" id="2_aseb1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cu35o"]
+
+[node name="TestCharacterEntity" type="CharacterBody3D" unique_id=1808165531]
+script = ExtResource("1_4q72m")
+metadata/_custom_type_script = "uid://bkj4ryvjxn0ri"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2036761624]
+shape = SubResource("SphereShape3D_cu35o")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1582178832]
+pixel_size = 0.005
+billboard = 1
+texture = ExtResource("2_aseb1")

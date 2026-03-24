@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5mrhvtw3yftx"]
 
 [ext_resource type="PackedScene" uid="uid://bxe7x6cybl6mm" path="res://scenes/entities/test_physics_object.tscn" id="1_iqhr0"]
+[ext_resource type="PackedScene" uid="uid://ude7qhddu3wy" path="res://scenes/entities/test_CharacterEntity.tscn" id="2_py2vk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3mvui"]
 sky_top_color = Color(0.269568, 0.3267538, 0.40295336, 1)
@@ -54,6 +55,9 @@ environment = SubResource("Environment_py2vk")
 
 [node name="TestPhysicsObject" parent="Entities" unique_id=200861859 instance=ExtResource("1_iqhr0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570817, 0)
+
+[node name="TestCharacterEntity" parent="Entities" unique_id=1808165531 instance=ExtResource("2_py2vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0.7, 4.3)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1299743347]
 transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 6.5, 2.9, 0.1)

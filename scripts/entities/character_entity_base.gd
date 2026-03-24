@@ -1,0 +1,1 @@
+class_name CharacterEntityBase extends CharacterBody3D

@@ -1,5 +1,5 @@
 @abstract
-class_name MemMappedComponentBase extends Node
+class_name MemMappedComponentBase extends Node3D
 
 var start_address: int = -1
 var end_address: int = -1
