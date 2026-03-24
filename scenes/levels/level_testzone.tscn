@@ -61,7 +61,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570817, 0)
 
 [node name="TestCharacterEntity" parent="Entities" unique_id=1808165531 instance=ExtResource("2_py2vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 0.79999995, 4.7000017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6225195, 0.79999995, 4.853446)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1299743347]
 transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 6.5, 2.9, 0.1)
