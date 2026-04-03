@@ -12,3 +12,7 @@ func _ready() -> void:
 func _on_text_changed() -> void:
 	request_code_completion(true)
 	get_code_completion_options()
+
+
+func _on_file_menu_file_content_read(text: String) -> void:
+	self.text = text
