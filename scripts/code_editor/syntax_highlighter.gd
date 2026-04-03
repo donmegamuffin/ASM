@@ -2,16 +2,11 @@ extends CodeHighlighter
 	
 # Theme colours
 const colour_palette : Dictionary = {
-	"Aqua":Color.AQUA,
-	"Blue":Color.BLUE,
-	"Chartreuse":Color.CHARTREUSE,
-	"Crimson":Color.CRIMSON,
-	"Cadet_blue":Color.CADET_BLUE,
 	"comment" : Color.AQUAMARINE,
 	"label": Color.PAPAYA_WHIP,
 	"instruction": Color.STEEL_BLUE,
 	"register": Color.OLIVE_DRAB,
-	"value": Color.BLUE,
+	"value": Color.INDIAN_RED,
 	"memory_address": Color.PALE_VIOLET_RED,
 	"unknown": Color.CRIMSON
 }
