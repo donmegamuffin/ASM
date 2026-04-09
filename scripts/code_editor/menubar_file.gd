@@ -22,7 +22,7 @@ func new_file() -> void:
 func open_file() -> void:
 	state = STATE.OPENING
 	var file_dialog := instantiate_filedialog(FileDialog.FileMode.FILE_MODE_OPEN_FILE)
-	get_tree().root.add_child(file_dialog)
+	add_child(file_dialog)
 	file_dialog.visible = true
 	
 func save() -> void:
@@ -32,15 +32,17 @@ func save() -> void:
 func save_as() -> void:
 	state = STATE.SAVING
 	var file_dialog := instantiate_filedialog(FileDialog.FileMode.FILE_MODE_SAVE_FILE)
-	get_tree().root.add_child(file_dialog)
+	add_child(file_dialog)
 	file_dialog.visible = true
 
 func instantiate_filedialog(file_mode: FileDialog.FileMode) -> FileDialog:
 	var file_dialog := FileDialog.new()
+	file_dialog.current_path = "usr://ASM_scripts/"
+	file_dialog.access = FileDialog.ACCESS_FILESYSTEM
 	file_dialog.use_native_dialog = false
 	file_dialog.force_native = false
 	file_dialog.file_mode = file_mode
-	file_dialog.files_selected.connect(_on_file_selected)
+	file_dialog.file_selected.connect(_on_file_selected)
 	return file_dialog
 	
 func _on_file_selected(path: String)->void:

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://rq3ci5iiuamh" path="res://scripts/code_editor/menubar_file.gd" id="2_0pfut"]
 [ext_resource type="Script" uid="uid://ckasmbru56no2" path="res://scripts/code_editor/syntax_highlighter.gd" id="2_i4sis"]
 [ext_resource type="FontFile" uid="uid://b3o5431r5xjjs" path="res://assets/fonts/JetBrainsMono-Regular.ttf" id="2_xqpb2"]
+[ext_resource type="Script" uid="uid://davvsdfiinffo" path="res://scripts/code_editor/dir_tree.gd" id="3_myn0y"]
 [ext_resource type="Script" uid="uid://2scbcltm7a5f" path="res://scripts/code_editor/code_edit.gd" id="4_cctyv"]
 
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_cctyv"]
@@ -53,6 +54,7 @@ layout_mode = 2
 [node name="Tree" type="Tree" parent="VBoxContainer/HSplitContainer/VSplitContainer" unique_id=1091330598]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+script = ExtResource("3_myn0y")
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HSplitContainer" unique_id=642531413]
 layout_mode = 2
@@ -128,4 +130,6 @@ script = ExtResource("4_cctyv")
 
 [connection signal="file_content_read" from="VBoxContainer/MenuBar/FileMenu" to="VBoxContainer/HSplitContainer/Panel/CodeEdit" method="_on_file_menu_file_content_read"]
 [connection signal="index_pressed" from="VBoxContainer/MenuBar/FileMenu" to="VBoxContainer/MenuBar/FileMenu" method="_on_index_pressed"]
+[connection signal="fpath_selected_for_opening" from="VBoxContainer/HSplitContainer/VSplitContainer/Tree" to="VBoxContainer/HSplitContainer/Panel/CodeEdit" method="_on_tree_fpath_selected_for_opening"]
+[connection signal="item_selected" from="VBoxContainer/HSplitContainer/VSplitContainer/Tree" to="VBoxContainer/HSplitContainer/VSplitContainer/Tree" method="_on_item_selected"]
 [connection signal="text_changed" from="VBoxContainer/HSplitContainer/Panel/CodeEdit" to="VBoxContainer/HSplitContainer/Panel/CodeEdit" method="_on_text_changed"]
